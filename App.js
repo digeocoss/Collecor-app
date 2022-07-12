@@ -1,25 +1,34 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import CameraUse from './Components/Camera/Camera.js';
+import Profile from './Components/Profile/Profile.js';
+import Feed from './Components/Feed/Feed.js';
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
 
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Camera" component={CameraUse} />
+      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Feed" component={Feed} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Change code in the editor and watch it change on your phone! Save to get a shareable url.
-      </Text>
-      <Card>
-        <AssetExample />
-      </Card>
-    </View>
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
