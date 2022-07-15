@@ -2,13 +2,12 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "red",
-    padding: "20%",
+    backgroundColor: "grey",
+    padding: "15%",
   },
   headings: {
-    fontSize: "100px",
-    backgroundColor: "blue",
-    color: "orange",
+    fontSize: "25px",
+    color: "White",
   },
 });
 

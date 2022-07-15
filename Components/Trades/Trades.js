@@ -6,6 +6,7 @@ const Trades = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.headings}> Hello from Trade </Text>
+      
     </View>
   );
 };
