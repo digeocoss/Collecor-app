@@ -1,62 +1,59 @@
-import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image}from 'react-native';
-import { SafeAreaView, FlatList, StatusBar } from 'react-native';
- 
+import React, { Component } from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import { SafeAreaView, FlatList, StatusBar } from "react-native";
+
 const DATA = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Chain saw man manga',
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bw",
+    title: "Chain saw man manga",
     img: require("../../assets/chain-example.jpeg"),
-
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Arcius Pokemom card',
+    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97fw3",
+    title: "Arcius Pokemom card",
     img: require("../../assets/ex2.jpeg"),
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Law figure',
+    id: "58694a0f-3da1-471f-bd96-145571e29ed72",
+    title: "Law figure",
     img: require("../../assets/ex3.jpeg"),
   },
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Tangiro Fuigure',
+    id: "bd7acbea-c1b1-46c2-aeed5-3ad53abb28ba",
+    title: "Tangiro Fuigure",
     img: require("../../assets/ex4.jpeg"),
-
-  },{
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Tamaki fuigure',
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-r3ad53abb28ba",
+    title: "Tamaki fuigure",
     img: require("../../assets/ex5.jpeg"),
-
-  },{
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'JoJos Bizzar adventure Golden Wind VOL.1 manga',
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-w3ad53abb28ba",
+    title: "JoJos Bizzar adventure Golden Wind VOL.1 manga",
     img: require("../../assets/ex6.jpeg"),
-
-  },{
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: '7 Item',
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-e3ad53abb28ba",
+    title: "7 Item",
     img: require("../../assets/chain-example.jpeg"),
-
-  },{
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: '8 Item',
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-3ard53abb28ba",
+    title: "8 Item",
     img: require("../../assets/chain-example.jpeg"),
-
-  },{
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: '9 Item',
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53atbb28ba",
+    title: "9 Item",
     img: require("../../assets/chain-example.jpeg"),
-
-  },{
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: '10 Item',
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53qabb28ba",
+    title: "10 Item",
     img: require("../../assets/chain-example.jpeg"),
-
   },
 ];
-
 
 const Item = ({ title }) => (
   <View style={styles.item}>
@@ -67,10 +64,9 @@ const Item = ({ title }) => (
 const App = () => {
   const renderItem = ({ item }) => (
     <>
-        <Item title={item.title} />
-        <Image source={ item.img } />
+      <Item title={item.title} />
+      <Image source={item.img} />
     </>
-
   );
 
   return (
@@ -78,11 +74,11 @@ const App = () => {
       <FlatList
         data={DATA}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
       />
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -90,7 +86,7 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: "#f9c2ff",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
