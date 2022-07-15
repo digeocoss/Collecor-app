@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CameraUse from './Components/Camera/Camera.js';
 import Profile from './Components/Profile/Profile.js';
 import Feed from './Components/Feed/Feed.js';
+import Trades from ./Components/Trade/Trade.jsjs';
 
 
 
@@ -17,6 +18,7 @@ function MyTabs() {
       <Tab.Screen name="Camera" component={CameraUse} />
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Feed" component={Feed} />
+      <Tab.Screen name="Trades" commponent={Trades} />
     </Tab.Navigator>
   );
 }

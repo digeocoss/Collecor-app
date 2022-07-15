@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
+import { ExampleProfile } from './Profile_Data';
 import {
   StyleSheet,
   Text,
-  View
+  View, Image, FlatList
 } from 'react-native';
 
 export default class Profile extends Component {
  
+
   render() {
     return (
 
       <View style={styles.container}>
-        <Text> Hello Profile </Text>
+       <Text> {ExampleProfile.userName} </Text>
+       <Image  source={ExampleProfile.pfp.img} />
+        { 
+            console.log(ExampleProfile)
+        }
       </View>
     );
   }
