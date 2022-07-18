@@ -2,13 +2,22 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "grey",
-    padding: "15%",
+    backgroundColor: "black",
+    padding: "5%",
   },
   headings: {
     fontSize: "25px",
     color: "White",
+    color: "white"
   },
+  itemselector: {
+    backgroundColor: "grey",
+    padding: "10%",
+  },
+   tradeImage: {
+      width: "100%",
+      hight: 200
+    },
 });
 
 export { styles };
