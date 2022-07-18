@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { SafeAreaView, FlatList, StatusBar } from "react-native";
 
+const Feed = () => {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.headings}> @user123 </Text>
+      </View>
+    );
+  };
+
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bw",
@@ -55,17 +63,17 @@ const DATA = [
   },
 ];
 
-const Item = ({ title }) => (
+const Item = ({ title, img }) => (
   <View style={styles.item}>
     <Text style={styles.title}>{title}</Text>
+    <Image style={styles.imageitem} source={img} />
   </View>
 );
 
 const App = () => {
   const renderItem = ({ item }) => (
     <>
-      <Item title={item.title} />
-      <Image source={item.img} />
+      <Item title={item.title} img={item.img} />
     </>
   );
 
@@ -81,6 +89,10 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+    imageItem: {
+        width: "50%",
+        height: 100,
+    },
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,

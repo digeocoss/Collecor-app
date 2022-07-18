@@ -7,6 +7,7 @@ import CameraUse from "./Components/Camera/Camera.js";
 import Profile from "./Components/Profile/Profile.js";
 import Feed from "./Components/Feed/Feed.js";
 import Trades from "./Components/Trades/Trades.js";
+import Buy from "./Components/Buy/Buy.js";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,6 +18,7 @@ function MyTabs() {
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Feed" component={Feed} />
       <Tab.Screen name="Trade" component={Trades} />
+      <Tab.Screen name="Buy" component={Buy} />
     </Tab.Navigator>
   );
 }
