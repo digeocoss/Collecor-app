@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { SafeAreaView, FlatList, StatusBar } from "react-native";
+import { SafeAreaView, FlatList } from "react-native";
+import { styles } from "./FeedStyles";
 
-const Feed = () => {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.headings}> @user123 </Text>
-      </View>
-    );
-  };
+
 
 const DATA = [
   {
@@ -78,7 +73,8 @@ const App = () => {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+   <SafeAreaView style={styles.container}>
+        <Text style={styles.headings}> Brows Collection </Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -87,25 +83,5 @@ const App = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-    imageItem: {
-        width: "50%",
-        height: 100,
-    },
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-  },
-});
 
 export default App;

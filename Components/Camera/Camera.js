@@ -1,6 +1,5 @@
 import { Camera } from "expo-camera";
 import * as MediaLibary from "expo-media-library";
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, SafeAreaView, ImageBackgroundComponent, Image  } from 'react-native';
 import { useState, useRef, useEffect } from "react";
 import { shareAsync } from "expo-sharing";
@@ -65,7 +64,7 @@ export default function CameraUse () {
           <View style={ styles.buttonContainer }>
             <Button title="Take picture" onPress={TakePicture}/>
             </View>
-          <StatusBar style="auto" />
+        
         </Camera>
       );
 }
