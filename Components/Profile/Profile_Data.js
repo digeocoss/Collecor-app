@@ -1,10 +1,11 @@
 export const ExampleProfile = {
     userName: "@user123",
     pfp: {
-      img : require("../../assets/ex6.jpeg"),
+      img : require("../../assets/expfp.jpeg"),
     },
     
-    "collections": [
+    
+    collections: [
             {
               id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
               title: 'Chain saw man manga',
