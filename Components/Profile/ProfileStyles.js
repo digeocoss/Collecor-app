@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
    tradeImage: {
       width: "100%",
-      hight: 200
+      height: 200
     },
 });
 

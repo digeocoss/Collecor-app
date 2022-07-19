@@ -1,65 +1,59 @@
-import React, { Component } from 'react';
-import { ExampleProfile } from './Profile_Data';
-import {
-  StyleSheet,
-  Text,
-  View, Image, FlatList
-} from 'react-native';
+import React, { Component } from "react";
+import { ExampleProfile } from "./Profile_Data";
+import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 
 export default function Profile() {
-
   const Item = ({ title, img }) => (
     <View style={stylesFeed.item}>
       <Text style={stylesFeed.title}>{title}</Text>
       <Image style={stylesFeed.imageitem} source={img} />
     </View>
   );
-  
+
   const renderItem = ({ item }) => (
     <>
       <Item title={item.title} img={item.img} />
     </>
   );
 
-    return (
-
-      <View style={styles.container}>
-       <Text> style={styles.container}{ExampleProfile.userName} </Text>
-       <Image style={styles.pfp} source={ExampleProfile.pfp.img} />
-        { 
-            console.log(ExampleProfile)
-        }
-        <Text style={styles.headings}>Your collection</Text>
-        <FlatList
+  return (
+    <View style={styles.container}>
+      {/* <Text>
+        {" "}
+        style={styles.container}
+        {ExampleProfile.userName}{" "}
+      </Text> */}
+      <Image style={styles.pfp} source={ExampleProfile.pfp.img} />
+      {console.log(ExampleProfile)}
+      <Text style={styles.headings}>Your collection</Text>
+      <FlatList
         data={ExampleProfile.collections}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-      </View>
-    );
-  
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   wrap: {
     flex: 1,
-    alignItems: 'flex-start',
+    alignItems: "flex-start",
   },
   container: {
     padding: 5,
-    backgroundColor: 'lightgray',
+    backgroundColor: "lightgray",
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: "gray",
     marginVertical: 10,
   },
   pfp: {
     width: 150,
     height: 150,
-    borderRadius: '80%',
-    overflow: 'hidden',
+    borderRadius: 200,
+    overflow: "hidden",
     borderWidth: 1,
-    borderColor: 'black',
-    
+    borderColor: "black",
   },
   container: {
     backgroundColor: "grey",
@@ -70,15 +64,15 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: "black",
     backgroundColor: "#f9c2ff",
-    textAlign: "center"
+    textAlign: "center",
   },
   itemselector: {
     backgroundColor: "grey",
     padding: "10%",
   },
   tradeImage: {
-      width: "100%",
-      hight: 200
+    width: "100%",
+    hight: 200,
   },
 });
 const stylesFeed = StyleSheet.create({
@@ -91,20 +85,20 @@ const stylesFeed = StyleSheet.create({
     fontSize: 25,
     // color: "Black",
     backgroundColor: "#f9c2ff",
-     textAlign: "center"
+    textAlign: "center",
   },
   itemselector: {
     backgroundColor: "grey",
     padding: "10%",
   },
-   tradeImage: {
-      width: "100%",
-      hight: 200
-    },
-    imageItem: {
-        width: "50%",
-        height: 100,
-    },
+  tradeImage: {
+    width: "100%",
+    hight: 200,
+  },
+  imageItem: {
+    width: "50%",
+    height: 100,
+  },
   container: {
     flex: 1,
     //marginTop: StatusBar.currentHeight || 0,
