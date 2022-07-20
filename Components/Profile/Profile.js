@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ExampleProfile } from "./Profile_Data";
-import { StyleSheet, Text, View, Image, FlatList } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList, Pressable, Button} from "react-native";
 
 export default function Profile() {
   const Item = ({ title, img }) => (
@@ -18,13 +18,23 @@ export default function Profile() {
 
   return (
     <View style={styles.container}>
-      {/* <Text>
-        {" "}
-        style={styles.container}
-        {ExampleProfile.userName}{" "}
-      </Text> */}
+      <Pressable style={styles.button} >
+      <View style = {{backgroundColor: '#f9c2ff', borderRadius: 200,}}>
+        <Text style={styles.text} > @user123 </Text>
+      </View>
+      </Pressable>
+      <View style={styles.Container1}>
       <Image style={styles.pfp} source={ExampleProfile.pfp.img} />
       {console.log(ExampleProfile)}
+      </View>
+      <View style={{ flexDirection:"row", justifyContent: "center", alignItems: "center",}}>
+    <Pressable style={styles.text}>
+        <Text>  Follow</Text>
+    </Pressable>
+    <Pressable style={styles.text}>
+        <Text> Messege</Text>
+    </Pressable>
+</View>
       <Text style={styles.headings}>Your collection</Text>
       <FlatList
         data={ExampleProfile.collections}
@@ -36,9 +46,26 @@ export default function Profile() {
 }
 
 const styles = StyleSheet.create({
-  wrap: {
-    flex: 1,
-    alignItems: "flex-start",
+  Container1: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'black',
+    
   },
   container: {
     padding: 5,
@@ -54,6 +81,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     borderWidth: 1,
     borderColor: "black",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   container: {
     backgroundColor: "grey",
