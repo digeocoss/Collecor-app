@@ -7,9 +7,10 @@ const Buy = () => {
   return (
     <View style={styles.container}>
       <View style={styles.userNameContainer}>
-        <Text style={styles.headings}> @user123 </Text>
+        <Image></Image>
       </View>
-      <Image
+      <Image style={styles.pfp} source={styles.pfp.img} />
+      {console.log(styles)}
         style={styles.tradeImage}
         source={require("../../assets/ex9.jpeg")}
       />
