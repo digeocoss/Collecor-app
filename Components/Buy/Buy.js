@@ -1,18 +1,30 @@
 import { getAssetsAsync } from "expo-media-library";
-import { View, Text, Image, Button } from "react-native";
+import { View, Text, Image, Button, Pressable } from "react-native";
 // Import the stylesheet
 import { styles } from "./ByeStyles";
 
 const Buy = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.headings}> @user123 </Text>
+         <View style={styles.container}>
+        <Text style={styles.headings}> @user123 </Text>
+    </View>
       <Image style={styles.tradeImage} source={require("../../assets/ex9.jpeg")} />
-      <Button title="Buy"/> 
-      <Text style={styles.headings}> $ Amount </Text>
-      <Button title="Trade->"/> 
-
-
+      <View style = {{backgroundColor: '#f9c2ff'}} >
+      <View>
+      <Pressable style={styles.button} >
+      <View style = {{backgroundColor: 'red', borderRadius: 200,}}>
+        <Text style={styles.text} >    Buy    </Text>
+      </View>
+      </Pressable>
+      <Text style={styles.headings2}> $ __________ </Text>
+      <Pressable style={styles.button} >
+      <View style = {{backgroundColor: 'red', borderRadius: 200,}}>
+        <Text style={styles.text} >   Trade   </Text>
+      </View>
+      </Pressable>
+      </View>
+      </View>
     </View>
   );
 };
