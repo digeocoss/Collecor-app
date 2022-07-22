@@ -11,12 +11,12 @@ const styles = StyleSheet.create({
   //   height: "100%",
   // },
   headings2: {
-    padding: "5%",
+    padding: "7%",
     fontSize: 25,
     color: "black",
     backgroundColor: "white",
     textAlign: "center",
-    borderRadius: 200
+    borderRadius: 200,
   },
   headings: {
     fontSize: "25px",
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
+    backgroundColor: "blue"
   },
   text: {
     fontSize: 16,
@@ -51,8 +52,8 @@ const styles = StyleSheet.create({
     color: "black",
   },
   pfp: {
-    width: 80,
-    height: 80,
+    width: 95,
+    height: 95,
     borderRadius: 200,
     overflow: "hidden",
     borderWidth: 1,
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     padding: "5%",
     fontSize: 25,
     color: "black",
-    backgroundColor: "#f9c2ff",
+    backgroundColor: "blue",
     textAlign: "center",
   },
   itemselector: {

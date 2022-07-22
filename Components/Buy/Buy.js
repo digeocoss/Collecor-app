@@ -6,23 +6,25 @@ import { styles } from "./ByeStyles";
 
 const Buy = () => {
   return (
-    <View style={styles.container}>
+    <View style={{flex:1, backgroundColor: 'blue'}}>
       <View style={styles.userNameContainer}>
         <Image style={styles.pfp} source={ExampleProfile.pfp.img} />
-        <Image source={ require("../../assets/5card.png")} />
+        <Image resizeMode = 'strech' style = {{width: 270, position : 'absolute', right:0, marginTop : 10}} source={ require("../../assets/5card.png")} />
       </View>
       <Image style={styles.tradeImage}
         source={require("../../assets/ex9.jpeg")} />
       <View style={{ backgroundColor: "#f9c2ff" }}>
         <View>
           <Pressable style={styles.button}>
-            <View style={{ backgroundColor: "red", borderRadius: 200 }}>
+            <View style={{ backgroundColor: "red", borderRadius: 200, marginTop: 50, marginBottom: 10 }}>
               <Text style={styles.text}> Buy </Text>
             </View>
-          </Pressable>
+          </Pressable >
+          <Pressable style={{ borderRadius: 300, backgroundColor: "black"}}  >
           <Text style={styles.headings2}> $ __________ </Text>
+          </Pressable>
           <Pressable style={styles.button}>
-            <View style={{ backgroundColor: "red", borderRadius: 200, padding: "10%" }}>
+            <View style={{ backgroundColor: "red", borderRadius: 200, marginTop: 40}}>
               <Text style={styles.text}> Trade </Text>
             </View>
           </Pressable>
