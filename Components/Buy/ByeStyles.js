@@ -1,17 +1,22 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "blue",
-    padding: "5%",
-    height: "100%",
+  userNameContainer: {
+    backgroundColor: "black",
+    padding: "2%"
   },
+  // container: {
+  //   backgroundColor: "blue",
+  //   padding: "5%",
+  //   height: "100%",
+  // },
   headings2: {
     padding: "5%",
     fontSize: 25,
     color: "black",
     backgroundColor: "white",
     textAlign: "center",
+    borderRadius: 200
   },
   headings: {
     fontSize: "25px",
@@ -46,8 +51,8 @@ const styles = StyleSheet.create({
     color: "black",
   },
   pfp: {
-    width: 150,
-    height: 150,
+    width: 80,
+    height: 80,
     borderRadius: 200,
     overflow: "hidden",
     borderWidth: 1,
