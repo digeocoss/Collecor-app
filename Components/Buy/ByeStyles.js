@@ -1,20 +1,28 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  buyImput: {
+    backrgroundColor: "red",
+    padding: "7%",
+    fontSize: 30,
+    color: "black",
+    textAlign: "center",
+    borderRadius: 200,
+  },
   userNameContainer: {
     backgroundColor: "black",
     padding: "2%"
   },
-  // container: {
-  //   backgroundColor: "blue",
-  //   padding: "5%",
-  //   height: "100%",
-  // },
+  moneyThing: {
+    backgroundColor: "white",
+    marginRight: "20%",
+    marginLeft:"20%",
+    borderRadius: 300,
+  },
   headings2: {
     padding: "7%",
     fontSize: 25,
     color: "black",
-    backgroundColor: "white",
     textAlign: "center",
     borderRadius: 200,
   },
@@ -42,11 +50,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: "blue"
   },
   text: {
-    fontSize: 16,
-    lineHeight: 21,
+    fontSize: 23,
+    lineHeight: 27,
     fontWeight: "bold",
     letterSpacing: 0.25,
     color: "black",
@@ -65,7 +72,6 @@ const styles = StyleSheet.create({
     padding: "5%",
     fontSize: 25,
     color: "black",
-    backgroundColor: "blue",
     textAlign: "center",
   },
   itemselector: {
