@@ -1,144 +1,82 @@
 import React, { Component } from "react";
 import { ExampleProfile } from "./Profile_Data";
-import { StyleSheet, Text, View, Image, FlatList, Pressable, Button} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  Pressable,
+  Button,
+  ScrollView,
+  SafeAreaView,
+} from "react-native";
+import { styles } from "./ProfileStyles.js";
+import { AirbnbRating } from "react-native-ratings";
+
+const SQUARE = require("../../assets/ratings-icons/square.png");
+const EMPTY_SQUARE = require("../../assets/ratings-icons/emptySquare.png");
+const INVISIBLE_SQUARE = require("../../assets/ratings-icons/invisibleSquare.png");
 
 export default function Profile() {
-  const Item = ({ title, img }) => (
-    <View style={stylesFeed.item}>
-      <Text style={stylesFeed.title}>{title}</Text>
-      <Image style={stylesFeed.imageitem} source={img} />
-    </View>
-  );
+  // const Item = ({ title, img }) => (
+  //   <View style={styles.item}>
+  //     <Text style={styles.title}>{title}</Text>
+  //     <Image style={styles.imageitem} source={img} />
+  //   </View>
+  // );
 
-  const renderItem = ({ item }) => (
-    <>
-      <Item title={item.title} img={item.img} />
-    </>
+  // const renderItem = ({ item }) => (
+  //   <>
+  //     <Item title={item.title} img={item.img} />
+  //   </>
+  // );
+
+  const GridView = ({ img }) => (
+    <View style={styles.collectionGrid}>
+      <Image style={styles.imgSize} source={img} />
+    </View>
   );
 
   return (
-    <View style={styles.container}>
-      <Pressable style={styles.button} >
-      <View style = {{backgroundColor: '#f9c2ff', borderRadius: 200,}}>
-        <Text style={styles.text} > @user123 </Text>
+    <ScrollView style={styles.container}>
+      {/* This will hold the Username, PFP, Follow and Message Button and Rating*/}
+      <View style={styles.profileContainer}>
+        <Text style={styles.userName}>{ExampleProfile.userName}</Text>
+        <Image style={styles.profilePicture} source={ExampleProfile.pfp.img} />
+        {/* This area will take care of styling the buttons */}
+        <View style={styles.buttonContainer}>
+          <Pressable style={styles.followButton}>
+            <Text style={styles.followText}>Follow</Text>
+          </Pressable>
+          <Pressable style={styles.messageButton}>
+            <Text style={styles.messageText}>Message</Text>
+          </Pressable>
+        </View>
       </View>
-      </Pressable>
-      <View style={styles.Container1}>
-      <Image style={styles.pfp} source={ExampleProfile.pfp.img} />
-      {console.log(ExampleProfile)}
+      <View style={styles.ratingContainer}>
+        {/* TODO: Find out how to space out these ratings */}
+        <AirbnbRating
+          type="custom"
+          defaultRating={1}
+          showRating={false}
+          starImage={SQUARE}
+          selectedColor="#81C8E7"
+          size={44}
+        />
       </View>
-      <View style={{ flexDirection:"row", justifyContent: "center", alignItems: "center",}}>
-    <Pressable style={styles.text}>
-        <Text>  Follow</Text>
-    </Pressable>
-    <Pressable style={styles.text}>
-        <Text> Messege</Text>
-    </Pressable>
-</View>
-      <Text style={styles.headings}>Your collection</Text>
+      <View style={styles.collectionContainer}>
+        <View style={styles.collectionBackground}></View>
+        <View style={styles.collectionBackgroundTwo}></View>
+        <Text style={styles.myCollectionText}>Your Collection</Text>
+      </View>
+
       <FlatList
         data={ExampleProfile.collections}
-        renderItem={renderItem}
+        renderItem={({ item }) => <GridView img={item.img} />}
         keyExtractor={(item) => item.id}
+        numColumns={2}
       />
-    </View>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  Container1: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    
-  },
-  text: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'black',
-    
-  },
-  container: {
-    padding: 5,
-    backgroundColor: "lightgray",
-    borderWidth: 1,
-    borderColor: "gray",
-    marginVertical: 10,
-  },
-  pfp: {
-    width: 150,
-    height: 150,
-    borderRadius: 200,
-    overflow: "hidden",
-    borderWidth: 1,
-    borderColor: "black",
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  container: {
-    backgroundColor: "grey",
-    padding: "5%",
-  },
-  headings: {
-    padding: "5%",
-    fontSize: 25,
-    color: "black",
-    backgroundColor: "#f9c2ff",
-    textAlign: "center",
-  },
-  itemselector: {
-    backgroundColor: "grey",
-    padding: "10%",
-  },
-  tradeImage: {
-    width: "100%",
-    hight: 200,
-  },
-});
-const stylesFeed = StyleSheet.create({
-  container: {
-    // backgroundColor: "black",
-    padding: "5%",
-  },
-  headings: {
-    padding: "5%",
-    fontSize: 25,
-    // color: "Black",
-    backgroundColor: "#f9c2ff",
-    textAlign: "center",
-  },
-  itemselector: {
-    backgroundColor: "grey",
-    padding: "10%",
-  },
-  tradeImage: {
-    width: "100%",
-    hight: 200,
-  },
-  imageItem: {
-    width: "50%",
-    height: 100,
-  },
-  container: {
-    flex: 1,
-    //marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-  },
-});

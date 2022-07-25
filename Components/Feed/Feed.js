@@ -3,8 +3,6 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { SafeAreaView, FlatList } from "react-native";
 import { styles } from "./FeedStyles";
 
-
-
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bw",
@@ -73,14 +71,14 @@ const App = () => {
   );
 
   return (
-   <SafeAreaView style={styles.container}>
-        <Text style={styles.headings}> Brows Collection </Text>
+    <View style={styles.container}>
+      <Text style={styles.headings}> Browse Collection </Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
