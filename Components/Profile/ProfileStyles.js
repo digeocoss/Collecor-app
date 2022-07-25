@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   headings: {
     fontSize: 25,
     color: "White",
-    color: "white"
+    backgroundColor: "#81C8E7"
   },
   itemselector: {
     backgroundColor: "grey",
@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
    tradeImage: {
       width: "100%",
       height: 200
+    },
+    text: {
+        backgroundColor: '#f9c2ff',
+         borderRadius: 50,
     },
 });
 

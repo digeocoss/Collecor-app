@@ -17,12 +17,12 @@ export default function Profile() {
   );
 
   return (
-    <View style={styles.container}>
+    <View style={{backgroundColor: "#084F6D"}} >
       <Pressable style={styles.button} >
-      <View style = {{backgroundColor: '#f9c2ff', borderRadius: 200,}}>
+      <View style = {{backgroundColor: '#81C8E7', borderRadius: 50,}}>
         <Text style={styles.text} > @user123 </Text>
       </View>
-      </Pressable>
+      </Pressable >
       <View style={styles.Container1}>
       <Image style={styles.pfp} source={ExampleProfile.pfp.img} />
       {console.log(ExampleProfile)}
@@ -35,8 +35,12 @@ export default function Profile() {
         <Text> Messege</Text>
     </Pressable>
 </View>
+<View style={{ backgroundColor: "black"}} >
+<Image resizeMode = 'strech' style = {{width: 300, position : 'center', backgroundColor: "black", marginLeft:50, marginTop : 10}} source={ require("../../assets/5card.png")} />
+</View>
       <Text style={styles.headings}>Your collection</Text>
       <FlatList
+        style={styles.miniFeed}
         data={ExampleProfile.collections}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
@@ -46,6 +50,9 @@ export default function Profile() {
 }
 
 const styles = StyleSheet.create({
+  miniFeed: {
+ 
+  },
   Container1: {
     justifyContent: "center",
     alignItems: "center",
@@ -92,7 +99,7 @@ const styles = StyleSheet.create({
     padding: "5%",
     fontSize: 25,
     color: "black",
-    backgroundColor: "#f9c2ff",
+    backgroundColor: "#81C8E7",
     textAlign: "center",
   },
   itemselector: {
@@ -133,7 +140,7 @@ const stylesFeed = StyleSheet.create({
     //marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    backgroundColor: "#f9c2ff",
+    backgroundColor: "white",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,

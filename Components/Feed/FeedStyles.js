@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     padding: "5%",
     fontSize: 25,
     color: "Black",
-    backgroundColor: "#f9c2ff",
+    backgroundColor: "#81C8E7",
      textAlign: "center"
   },
   itemselector: {
@@ -26,10 +26,11 @@ const styles = StyleSheet.create({
     },
   container: {
     flex: 1,
+    backgroundColor: "#084F6D"
     //marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    backgroundColor: "#f9c2ff",
+    backgroundColor: "white",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
