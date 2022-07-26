@@ -94,6 +94,13 @@ const App = () => {
     </View>
   );
 
+  const renderButtons = ({ item }) => (
+    <View>
+      <FilterButton title={item.title} />
+    </View>
+  );
+  
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.collectionsContainer}>
@@ -110,15 +117,12 @@ const App = () => {
 
         <Text style={styles.headSort}> Sort By </Text>
 
-        <Pressable style={styles.sortCat}>
-          <Text style={styles.sortCatText}> Manga </Text>
-        </Pressable>
-        <Pressable style={styles.sortCat}>
-          <Text style={styles.sortCatText}> Action Figures </Text>
-        </Pressable>
-        <Pressable style={styles.sortCat}>
-          <Text style={styles.sortCatText}> card </Text>
-        </Pressable>
+        <FlatList
+          horizontal
+          data={Sort}
+          renderItem={renderButtons}
+          keyExtractor={(item) => item.id}
+        />
       </View>
       <View>
         <Text style={styles.headText}> Manga </Text>
