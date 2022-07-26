@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import { SafeAreaView, FlatList } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { SafeAreaView, FlatList, ScrollView} from "react-native";
 import { styles } from "./FeedStyles";
 
 const DATA = [
@@ -56,29 +56,77 @@ const DATA = [
   },
 ];
 
-const Item = ({ title, img }) => (
+const Item = ({ img }) => (
   <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
     <Image style={styles.imageitem} source={img} />
   </View>
 );
 
 const App = () => {
   const renderItem = ({ item }) => (
-    <>
-      <Item title={item.title} img={item.img} />
-    </>
+    <View>
+      <Item img={item.img} />
+    </View>
   );
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} >
+      <View style={styles.collectionsContainer} >
+        <Text style={styles.headText}> Featured Collections </Text>
+      </View>
+
+      <View>    
+         <View style={{ height: 300 }}>
+            <FlatList
+              horizontal
+              data={DATA}
+              renderItem={renderItem}
+              keyExtractor={(item ) =>item.id }
+            />
+        </View>
+
+         <Text style={styles.headSort} > Sort By </Text>
+
+         <Pressable style={styles.sortCat}>
+          <Text style={styles.sortCatText} > Manga </Text>
+         </Pressable>
+         <Pressable style={styles.sortCat}>
+          <Text style={styles.sortCatText} > Action Figures </Text>
+         </Pressable>
+         <Pressable style={styles.sortCat}>
+          <Text style={styles.sortCatText} > card </Text>
+         </Pressable>
+      </View>
+      <View>
+        <Text style={styles.headText}> Manga </Text>
+        <FlatList
+              horizontal
+              data={DATA}
+              renderItem={renderItem}
+              keyExtractor={(item ) =>item.id }
+            />
+      </View>
+
+      <View>
+        <Text style={styles.headText}> Action Figuers </Text>
+        <FlatList
+              horizontal
+              data={DATA}
+              renderItem={renderItem}
+              keyExtractor={(item ) =>item.id }
+            />
+      </View>
+      
+
+    {/* <View style={styles.container}>
       <Text style={styles.headings}> Browse Collection </Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-    </View>
+    </View> */}
+    </ScrollView>
   );
 };
 
