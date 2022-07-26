@@ -7,6 +7,13 @@ const styles = StyleSheet.create({
     paddingTop: "15%",
     paddingLeft: "5%",
   },
+  imageitem: {
+    borderRadius: 20,
+    marginLeft: 7,
+    width: 200,
+    height: 200,
+  
+  },
   sortCatigories: {
     borderRadius: 200,
   },
