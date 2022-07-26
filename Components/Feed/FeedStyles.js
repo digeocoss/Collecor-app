@@ -12,27 +12,24 @@ const styles = StyleSheet.create({
     marginLeft: 7,
     width: 200,
     height: 200,
-  
   },
   sortCatigories: {
     borderRadius: 200,
   },
   collectionsContainer: {
-   
+    marginBottom: 15,
   },
   headText: {
     fontSize: 25,
     color: "white",
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
-  sortContainer: {
-    // flexWrap: "wrap",
-    // flexDirection: "row"
-  },
+  sortContainer: {},
   headSort: {
     fontSize: 20,
     fontWeight: "bold",
     color: "white",
+    marginBottom: 15,
   },
   sortCat: {
     backgroundColor: "white",
@@ -46,8 +43,8 @@ const styles = StyleSheet.create({
   },
   sortCatText: {
     fontSize: 20,
-  }
-  
+  },
+
   // container: {
   //   backgroundColor: "black",
   //   padding: "5%",
@@ -73,7 +70,7 @@ const styles = StyleSheet.create({
   //   },
   // container: {
   //   flex: 1,
-    //marginTop: StatusBar.currentHeight || 0,
+  //marginTop: StatusBar.currentHeight || 0,
   // },
   // item: {
   //   backgroundColor: "#f9c2ff",

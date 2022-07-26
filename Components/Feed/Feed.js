@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
-import { SafeAreaView, FlatList, ScrollView} from "react-native";
+import { SafeAreaView, FlatList, ScrollView } from "react-native";
 import { styles } from "./FeedStyles";
 
 const Sort = [
@@ -21,6 +21,7 @@ const Sort = [
     title: "Toy's",
   },
 ];
+
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bw",
@@ -80,6 +81,12 @@ const Item = ({ img }) => (
   </View>
 );
 
+const FilterButton = ({ title }) => (
+  <Pressable style={styles.sortCat}>
+    <Text style={styles.sortCatText}>{title}</Text>
+  </Pressable>
+);
+
 const App = () => {
   const renderItem = ({ item }) => (
     <View>
@@ -88,55 +95,52 @@ const App = () => {
   );
 
   return (
-    <ScrollView style={styles.container} >
-      <View style={styles.collectionsContainer} >
+    <ScrollView style={styles.container}>
+      <View style={styles.collectionsContainer}>
         <Text style={styles.headText}> Featured Collections </Text>
       </View>
 
-      <View>    
-         <View style={{ height: 300 }}>
-            <FlatList
-              horizontal
-              data={DATA}
-              renderItem={renderItem}
-              keyExtractor={(item ) =>item.id }
-            />
-        </View>
+      <View>
+        <FlatList
+          horizontal
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
 
-         <Text style={styles.headSort} > Sort By </Text>
+        <Text style={styles.headSort}> Sort By </Text>
 
-         <Pressable style={styles.sortCat}>
-          <Text style={styles.sortCatText} > Manga </Text>
-         </Pressable>
-         <Pressable style={styles.sortCat}>
-          <Text style={styles.sortCatText} > Action Figures </Text>
-         </Pressable>
-         <Pressable style={styles.sortCat}>
-          <Text style={styles.sortCatText} > card </Text>
-         </Pressable>
+        <Pressable style={styles.sortCat}>
+          <Text style={styles.sortCatText}> Manga </Text>
+        </Pressable>
+        <Pressable style={styles.sortCat}>
+          <Text style={styles.sortCatText}> Action Figures </Text>
+        </Pressable>
+        <Pressable style={styles.sortCat}>
+          <Text style={styles.sortCatText}> card </Text>
+        </Pressable>
       </View>
       <View>
         <Text style={styles.headText}> Manga </Text>
         <FlatList
-              horizontal
-              data={DATA}
-              renderItem={renderItem}
-              keyExtractor={(item ) =>item.id }
-            />
+          horizontal
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
       </View>
 
       <View>
         <Text style={styles.headText}> Action Figuers </Text>
-                    <FlatList
-              horizontal
-              data={DATA}
-              renderItem={renderItem}
-              keyExtractor={(item ) =>item.id }
-            />
+        <FlatList
+          horizontal
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
       </View>
-      
 
-    {/* <View style={styles.container}>
+      {/* <View style={styles.container}>
       <Text style={styles.headings}> Browse Collection </Text>
       <FlatList
         data={DATA}
