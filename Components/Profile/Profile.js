@@ -40,10 +40,6 @@ export default function Profile() {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.iconHeader}>
-        <Text>Settings</Text>
-        <Text>Notifications</Text>
-      </View>
       {/* This will hold the Username, PFP, Follow and Message Button and Rating*/}
       <View style={styles.profileContainer}>
         {/* <Text style={styles.userName}>{ExampleProfile.userName}</Text> */}
@@ -64,12 +60,12 @@ export default function Profile() {
         <Text style={styles.urc}> Your Collection </Text>
       </View>
 
-      {/* <FlatList
+      <FlatList
         data={ExampleProfile.collections}
         renderItem={({ item }) => <GridView img={item.img} />}
         keyExtractor={(item) => item.id}
         numColumns={2}
-      /> */}
+      />
     </ScrollView>
   );
 }

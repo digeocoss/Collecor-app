@@ -15,16 +15,7 @@ const styles = StyleSheet.create({
   profileContainer: {
     alignContent: "center",
     alignItems: "center",
-    // marginTop: "10%",
-  },
-  userName: {
-    backgroundColor: "#81C8E7",
-    borderWidth: 1,
-    borderColor: "#81C8E7",
-    textAlign: "center",
-    borderRadius: 10,
-    fontSize: 30,
-    overflow: "hidden",
+    marginTop: "10%",
   },
   profilePicture: {
     width: 150,

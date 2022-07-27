@@ -3,6 +3,9 @@ export const ExampleProfile = {
   pfp: {
     img: require("../../assets/expfp.jpeg"),
   },
+  tradeItem: {
+    img: require("../../assets/chain-example.jpeg"),
+  },
 
   collections: [
     {
