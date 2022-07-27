@@ -40,13 +40,17 @@ export default function Profile() {
 
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.iconHeader}>
+        <Text>Settings</Text>
+        <Text>Notifications</Text>
+      </View>
       {/* This will hold the Username, PFP, Follow and Message Button and Rating*/}
       <View style={styles.profileContainer}>
         {/* <Text style={styles.userName}>{ExampleProfile.userName}</Text> */}
         <Image style={styles.profilePicture} source={ExampleProfile.pfp.img} />
         <View>
-          <Text style={styles.userName} > @user123 </Text>
-        <Text style={styles.rating} > 4.7 Rating </Text>
+          <Text style={styles.userName}> @user123 </Text>
+          <Text style={styles.rating}> 4.7 Rating </Text>
         </View>
         {/* This area will take care of styling the buttons */}
         <View style={styles.buttonContainer}>
@@ -57,15 +61,15 @@ export default function Profile() {
       </View>
 
       <View>
-        <Text style={styles.urc} > Your Collection  </Text>
+        <Text style={styles.urc}> Your Collection </Text>
       </View>
 
-      <FlatList
+      {/* <FlatList
         data={ExampleProfile.collections}
         renderItem={({ item }) => <GridView img={item.img} />}
         keyExtractor={(item) => item.id}
         numColumns={2}
-      />
+      /> */}
     </ScrollView>
   );
 }

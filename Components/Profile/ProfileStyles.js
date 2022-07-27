@@ -5,10 +5,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#084F6D",
   },
+  iconHeader: {
+    backgroundColor: "red",
+    padding: 15,
+    marginTop: "10%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
   profileContainer: {
     alignContent: "center",
     alignItems: "center",
-    marginTop: "10%",
+    // marginTop: "10%",
   },
   userName: {
     backgroundColor: "#81C8E7",
@@ -24,8 +31,6 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 200,
     overflow: "hidden",
-    borderWidth: 1,
-    borderColor: "black",
     justifyContent: "center",
     alignItems: "center",
     marginTop: 20,
@@ -38,14 +43,14 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
   },
-    rating: {
-      color: "white",
-      marginTop: "2%",
-      textAlign: "center",
-      fontSize: 20,
-      fontWeight: "bold",
-    },
-  
+  rating: {
+    color: "white",
+    marginTop: "2%",
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+
   // TODO: Figure out a way to make the buttons the same
   // TODO: Add font style
   messageButton: {

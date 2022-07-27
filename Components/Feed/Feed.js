@@ -10,15 +10,15 @@ const Sort = [
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97fw3",
-    title: "Cards",
+    title: "Trading Cards",
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29ed72",
-    title: "Action figuress",
+    title: "Action Figures",
   },
   {
     id: "bd7acbea-c1b1-46c2-aeed5-3ad53abb28ba",
-    title: "Toy's",
+    title: "Posters",
   },
 ];
 
@@ -99,60 +99,57 @@ const App = () => {
       <FilterButton title={item.title} />
     </View>
   );
-  
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.collectionsContainer}>
-        <Text style={styles.headText}> Featured Collections </Text>
-      </View>
+    <View style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.collectionsContainer}>
+          <Text style={styles.headerText}> Featured Collections </Text>
+        </View>
 
-      <View>
-        <FlatList
-          horizontal
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-        />
+        <View style={styles.featuredCollections}>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+        <View style={styles.sortContainer}>
+          <Text style={styles.headSort}> Sort By </Text>
 
-        <Text style={styles.headSort}> Sort By </Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={Sort}
+            renderItem={renderButtons}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+        <View style={styles.mangaContainer}>
+          <Text style={styles.headerText}> Manga </Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
 
-        <FlatList
-          horizontal
-          data={Sort}
-          renderItem={renderButtons}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
-      <View>
-        <Text style={styles.headText}> Manga </Text>
-        <FlatList
-          horizontal
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
-
-      <View>
-        <Text style={styles.headText}> Action Figuers </Text>
-        <FlatList
-          horizontal
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
-
-      {/* <View style={styles.container}>
-      <Text style={styles.headings}> Browse Collection </Text>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </View> */}
-    </ScrollView>
+        <View>
+          <Text style={styles.headerText}> Action Figures </Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
