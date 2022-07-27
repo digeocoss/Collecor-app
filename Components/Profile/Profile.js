@@ -42,33 +42,22 @@ export default function Profile() {
     <ScrollView style={styles.container}>
       {/* This will hold the Username, PFP, Follow and Message Button and Rating*/}
       <View style={styles.profileContainer}>
-        <Text style={styles.userName}>{ExampleProfile.userName}</Text>
+        {/* <Text style={styles.userName}>{ExampleProfile.userName}</Text> */}
         <Image style={styles.profilePicture} source={ExampleProfile.pfp.img} />
+        <View>
+          <Text style={styles.userName} > @user123 </Text>
+        <Text style={styles.rating} > 4.7 Rating </Text>
+        </View>
         {/* This area will take care of styling the buttons */}
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.followButton}>
-            <Text style={styles.followText}>Follow</Text>
-          </Pressable>
           <Pressable style={styles.messageButton}>
             <Text style={styles.messageText}>Message</Text>
           </Pressable>
         </View>
       </View>
-      <View style={styles.ratingContainer}>
-        {/* TODO: Find out how to space out these ratings */}
-        <AirbnbRating
-          type="custom"
-          defaultRating={1}
-          showRating={false}
-          starImage={SQUARE}
-          selectedColor="#81C8E7"
-          size={44}
-        />
-      </View>
-      <View style={styles.collectionContainer}>
-        <View style={styles.collectionBackground}></View>
-        <View style={styles.collectionBackgroundTwo}></View>
-        <Text style={styles.myCollectionText}>Your Collection</Text>
+
+      <View>
+        <Text style={styles.urc} > Your Collection  </Text>
       </View>
 
       <FlatList

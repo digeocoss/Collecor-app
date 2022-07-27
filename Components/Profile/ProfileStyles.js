@@ -31,49 +31,45 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
   },
+  userName: {
+    color: "white",
+    marginTop: "2%",
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold",
+  },
+    rating: {
+      color: "white",
+      marginTop: "2%",
+      textAlign: "center",
+      fontSize: 20,
+      fontWeight: "bold",
+    },
+  
   // TODO: Figure out a way to make the buttons the same
   // TODO: Add font style
-  buttonContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    width: "70%",
-  },
-  followButton: {
-    backgroundColor: "#81C8E7",
-    borderWidth: 1,
-    borderColor: "#81C8E7",
-    borderRadius: 30,
-    paddingRight: 10,
-    paddingLeft: 10,
-  },
   messageButton: {
-    backgroundColor: "#81C8E7",
+    backgroundColor: "white",
     borderWidth: 1,
-    borderColor: "#81C8E7",
+    borderColor: "black",
     textAlign: "center",
     borderRadius: 30,
     textAlign: "center",
     paddingRight: 10,
     paddingLeft: 10,
-  },
-  followText: {
-    fontSize: 30,
-    textAlign: "center",
+    marginTop: "10%",
   },
   messageText: {
     fontSize: 30,
     textAlign: "center",
   },
-  // Rating
-  ratingContainer: {
-    backgroundColor: "#000000",
-    width: "100%",
-    marginTop: "3%",
-    padding: "3%",
-  },
-  rating: {
-    padding: 50,
+  urc: {
+    color: "white",
+    marginTop: "2%",
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold",
+    marginBottom: 35,
   },
   // collection start
   collectionContainer: {
@@ -81,27 +77,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 10,
   },
-  collectionBackground: {
-    backgroundColor: "#81C8E7",
-    width: 200,
-    height: 35,
-    margin: 20,
-    borderWidth: 1,
-    borderColor: "#ffffff",
-    borderRadius: 10,
-    transform: [{ rotate: "7deg" }],
-  },
-  collectionBackgroundTwo: {
-    backgroundColor: "#81C8E7",
-    width: 200,
-    height: 35,
-    margin: 20,
-    position: "absolute",
-    borderWidth: 1,
-    borderColor: "#ffffff",
-    borderRadius: 10,
-    transform: [{ rotate: "-7deg" }],
-  },
+
   myCollectionText: {
     position: "absolute",
     fontSize: 22,
@@ -116,10 +92,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-evenly",
     width: 100,
+    padding: "2%",
   },
   imgSize: {
     width: "100%",
     height: 200,
+    borderRadius: 20,
   },
 });
 
