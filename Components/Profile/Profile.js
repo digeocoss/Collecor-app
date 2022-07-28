@@ -1,45 +1,45 @@
-import React, { Component } from "react";
-import { ExampleProfile } from "./Profile_Data";
 import {
-  StyleSheet,
   Text,
   View,
   Image,
   FlatList,
   Pressable,
-  Button,
   ScrollView,
-  SafeAreaView,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { ExampleProfile } from "../../Data/Profile_Data";
 import { styles } from "./ProfileStyles.js";
-import { AirbnbRating } from "react-native-ratings";
-
-const SQUARE = require("../../assets/ratings-icons/square.png");
-const EMPTY_SQUARE = require("../../assets/ratings-icons/emptySquare.png");
-const INVISIBLE_SQUARE = require("../../assets/ratings-icons/invisibleSquare.png");
 
 export default function Profile() {
-  // const Item = ({ title, img }) => (
-  //   <View style={styles.item}>
-  //     <Text style={styles.title}>{title}</Text>
-  //     <Image style={styles.imageitem} source={img} />
-  //   </View>
-  // );
-
-  // const renderItem = ({ item }) => (
-  //   <>
-  //     <Item title={item.title} img={item.img} />
-  //   </>
-  // );
-
-  const GridView = ({ img }) => (
-    <View style={styles.collectionGrid}>
-      <Image style={styles.imgSize} source={img} />
+  const GridView = (item) => (
+    <View key={item.id} style={styles.collectionGrid}>
+      <Image style={styles.imgSize} source={item.img} />
     </View>
   );
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      <View style={styles.iconHeader}>
+        <Pressable
+          onPress={() => {
+            console.log("open settings");
+          }}
+        >
+          <Ionicons name="cog" size={50} color="white" />
+        </Pressable>
+        <Pressable
+          onPress={() => {
+            console.log("open notifications");
+          }}
+        >
+          <MaterialCommunityIcons
+            name="bell-circle-outline"
+            size={50}
+            color="white"
+          />
+        </Pressable>
+      </View>
       {/* This will hold the Username, PFP, Follow and Message Button and Rating*/}
       <View style={styles.profileContainer}>
         {/* <Text style={styles.userName}>{ExampleProfile.userName}</Text> */}
@@ -48,24 +48,21 @@ export default function Profile() {
           <Text style={styles.userName}> @user123 </Text>
           <Text style={styles.rating}> 4.7 Rating </Text>
         </View>
-        {/* This area will take care of styling the buttons */}
-        <View style={styles.buttonContainer}>
-          <Pressable style={styles.messageButton}>
-            <Text style={styles.messageText}>Message</Text>
-          </Pressable>
-        </View>
       </View>
 
-      <View>
+      <View style={styles.myCollectionContainer}>
         <Text style={styles.urc}> Your Collection </Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {ExampleProfile.collections.map((item) => GridView(item))}
+        </ScrollView>
       </View>
 
-      <FlatList
+      {/* <FlatList
         data={ExampleProfile.collections}
         renderItem={({ item }) => <GridView img={item.img} />}
         keyExtractor={(item) => item.id}
         numColumns={2}
-      />
+      /> */}
     </ScrollView>
   );
 }

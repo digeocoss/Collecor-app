@@ -1,10 +1,9 @@
 import { View, Text, Pressable, Image } from "react-native";
 import { styles } from "./SinglePageStyle.js";
-import { ExampleProfile } from "../Profile/Profile_Data.js";
+import { ExampleProfile } from "../../Data/Profile_Data";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { useRef, useMemo, useCallback } from "react";
 
-  
 export default function SinglePage() {
   const bottomSheetRef = useRef(BottomSheet);
   const snapPoints = useMemo(() => ["1%", "75%"], []);
@@ -34,17 +33,23 @@ export default function SinglePage() {
       </View>
     </BottomSheet>
   );
-return (
+  return (
     <View style={styles.container}>
       <View style={styles.TradeThingContainer}>
-        <Image style={styles.tradeThing} source={ExampleProfile.tradeItem.img} />
-        </View>
-      <Text style={styles.ooo} >ooo</Text>
+        <Image
+          style={styles.tradeThing}
+          source={ExampleProfile.tradeItem.img}
+        />
+      </View>
+      <Text style={styles.ooo}>ooo</Text>
       <View>
-      <View style={styles.profileContainer}>
-        <Image style={styles.profilePicture} source={ExampleProfile.pfp.img} />
-        <Text style={styles.proText}>@user123</Text>
-        <Text style={styles.rat} >4.7 Rating</Text>
+        <View style={styles.profileContainer}>
+          <Image
+            style={styles.profilePicture}
+            source={ExampleProfile.pfp.img}
+          />
+          <Text style={styles.proText}>@user123</Text>
+          <Text style={styles.rat}>4.7 Rating</Text>
         </View>
         <Text>ChainSaw Man Vol.1 manga book</Text>
         <Text>Freshn from barns and noble</Text>
@@ -52,9 +57,7 @@ return (
       <Pressable onPress={() => open()}>
         <Text>Press Me</Text>
       </Pressable>
-      {
-        bottomSheet()
-      }
+      {bottomSheet()}
     </View>
   );
 }

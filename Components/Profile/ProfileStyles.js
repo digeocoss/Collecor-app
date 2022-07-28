@@ -6,16 +6,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#084F6D",
   },
   iconHeader: {
-    backgroundColor: "red",
-    padding: 15,
-    marginTop: "10%",
+    padding: 5,
+    marginTop: "13%",
+    marginLeft: "2%",
+    marginRight: "2%",
     flexDirection: "row",
     justifyContent: "space-between",
   },
   profileContainer: {
     alignContent: "center",
     alignItems: "center",
-    marginTop: "10%",
+    marginTop: -30,
+    marginBottom: 30,
   },
   profilePicture: {
     width: 150,
@@ -24,8 +26,6 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
-    marginBottom: 10,
   },
   userName: {
     color: "white",
@@ -68,31 +68,20 @@ const styles = StyleSheet.create({
     marginBottom: 35,
   },
   // collection start
-  collectionContainer: {
-    flexWrap: "wrap",
-    alignSelf: "center",
-    marginTop: 10,
-  },
-
-  myCollectionText: {
-    position: "absolute",
-    fontSize: 22,
-    marginTop: 25,
-    marginLeft: "auto",
-    marginRight: "auto",
-    left: 0,
-    right: 0,
-    textAlign: "center",
+  myCollectionContainer: {
+    alignItems: "center",
   },
   collectionGrid: {
     flex: 1,
     justifyContent: "space-evenly",
-    width: 100,
+    width: 200,
     padding: "2%",
+    flexWrap: "wrap",
   },
   imgSize: {
     width: "100%",
     height: 200,
+    margin: 4,
     borderRadius: 20,
   },
 });

@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
   },
   actionFiguresContainer: {
     paddingBottom: 15,
+    marginBottom: "20%",
   },
   headSort: {
     fontSize: 20,
