@@ -19,13 +19,13 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName="Feed"
       screenOptions={{
-        tabBarActiveTintColor: "#81C8E7",
+        tabBarActiveTintColor: "#fff",
         title: "",
         tabBarStyle: {
           backgroundColor: "#084F6D",
           borderTopColor: "transparent",
           paddingTop: 10,
-          paddingBottom: 10
+          paddingBottom: 10,
         },
       }}
     >
@@ -61,7 +61,7 @@ function MyTabs() {
       />
       {/* <Tab.Screen name="Trade" component={Trades} />
       <Tab.Screen name="Buy" component={Buy} /> */}
-      {/* <Tab.Screen name="SinglePage" component={SinglePage} /> */}
+      <Tab.Screen name="SinglePage" component={SinglePage} />
     </Tab.Navigator>
   );
 }

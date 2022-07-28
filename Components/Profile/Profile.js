@@ -2,7 +2,6 @@ import {
   Text,
   View,
   Image,
-  FlatList,
   Pressable,
   ScrollView,
 } from "react-native";
@@ -13,8 +12,10 @@ import { styles } from "./ProfileStyles.js";
 
 export default function Profile() {
   const GridView = (item) => (
-    <View key={item.id} style={styles.collectionGrid}>
-      <Image style={styles.imgSize} source={item.img} />
+    <View key={item.id}>
+      <View style={styles.row}>
+        <Image style={styles.imgSize} source={item.img} />
+      </View>
     </View>
   );
 
@@ -50,11 +51,13 @@ export default function Profile() {
         </View>
       </View>
 
-      <View style={styles.myCollectionContainer}>
+      <View>
         <Text style={styles.urc}> Your Collection </Text>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          {ExampleProfile.collections.map((item) => GridView(item))}
-        </ScrollView>
+        <View style={styles.myCollectionContainer}>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            {ExampleProfile.collections.map((item) => GridView(item))}
+          </ScrollView>
+        </View>
       </View>
 
       {/* <FlatList

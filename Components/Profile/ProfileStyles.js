@@ -69,20 +69,10 @@ const styles = StyleSheet.create({
   },
   // collection start
   myCollectionContainer: {
-    alignItems: "center",
-  },
-  collectionGrid: {
     flex: 1,
-    justifyContent: "space-evenly",
-    width: 200,
-    padding: "2%",
+    backgroundColor: "red",
+    flexDirection: "row",
     flexWrap: "wrap",
-  },
-  imgSize: {
-    width: "100%",
-    height: 200,
-    margin: 4,
-    borderRadius: 20,
   },
 });
 
