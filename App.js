@@ -9,6 +9,8 @@ import Profile from "./Components/Profile/Profile.js";
 import Feed from "./Components/Feed/Feed.js";
 import Trades from "./Components/Trades/Trades.js";
 import Buy from "./Components/Buy/Buy.js";
+import SinglePage from "./Components/SinglePage/SinglePage.js";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,15 +47,18 @@ function MyTabs() {
       />
       {/* <Tab.Screen name="Trade" component={Trades} />
       <Tab.Screen name="Buy" component={Buy} /> */}
+      <Tab.Screen name="SinglePage" component={SinglePage} />
     </Tab.Navigator>
   );
 }
 
 export default function App() {
   return (
+    <GestureHandlerRootView style={{flex: 1,}}>
     <NavigationContainer>
       <MyTabs />
     </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
 

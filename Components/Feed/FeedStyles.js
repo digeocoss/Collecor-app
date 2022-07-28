@@ -2,40 +2,58 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "black",
-    padding: "5%",
-  },
-  headings: {
-    padding: "5%",
-    fontSize: 25,
-    color: "Black",
-    backgroundColor: "#f9c2ff",
-     textAlign: "center"
-  },
-  itemselector: {
-    backgroundColor: "grey",
-    padding: "10%",
-  },
-   tradeImage: {
-      width: "100%",
-      hight: 200
-    },
-    imageItem: {
-        width: "50%",
-        height: 100,
-    },
-  container: {
     flex: 1,
-    //marginTop: StatusBar.currentHeight || 0,
+    backgroundColor: "#084F6D",
+    paddingTop: "20%",
+    paddingLeft: "3%",
   },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
+  imageitem: {
+    borderRadius: 20,
+    marginLeft: 7,
+    width: 200,
+    height: 200,
   },
-  title: {
-    fontSize: 32,
+  sortCatigories: {
+    borderRadius: 200,
+  },
+  collectionsContainer: {
+    marginBottom: 15,
+  },
+  featuredCollections: {
+    marginBottom: 15,
+  },
+  headerText: {
+    fontSize: 25,
+    color: "white",
+    fontWeight: "bold",
+    marginBottom: 15
+  },
+  sortContainer: {
+    paddingBottom: 15,
+  },
+  mangaContainer: {
+    paddingBottom: 15,
+  },
+  headSort: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "white",
+    marginBottom: 15,
+  },
+  sortCat: {
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "Black",
+    textAlign: "center",
+    borderRadius: 30,
+    textAlign: "center",
+    paddingRight: 10,
+    paddingLeft: 10,
+    margin: 5,
+  },
+  sortCatText: {
+    fontSize: 20,
+    padding: 5,
   },
 });
 

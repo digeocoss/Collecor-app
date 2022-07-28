@@ -1,7 +1,26 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import { SafeAreaView, FlatList } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { SafeAreaView, FlatList, ScrollView } from "react-native";
 import { styles } from "./FeedStyles";
+
+const Sort = [
+  {
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28bw",
+    title: "Manga",
+  },
+  {
+    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97fw3",
+    title: "Trading Cards",
+  },
+  {
+    id: "58694a0f-3da1-471f-bd96-145571e29ed72",
+    title: "Action Figures",
+  },
+  {
+    id: "bd7acbea-c1b1-46c2-aeed5-3ad53abb28ba",
+    title: "Posters",
+  },
+];
 
 const DATA = [
   {
@@ -56,28 +75,80 @@ const DATA = [
   },
 ];
 
-const Item = ({ title, img }) => (
+const Item = ({ img }) => (
   <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
     <Image style={styles.imageitem} source={img} />
   </View>
 );
 
+const FilterButton = ({ title }) => (
+  <Pressable style={styles.sortCat}>
+    <Text style={styles.sortCatText}>{title}</Text>
+  </Pressable>
+);
+
 const App = () => {
   const renderItem = ({ item }) => (
-    <>
-      <Item title={item.title} img={item.img} />
-    </>
+    <View>
+      <Item img={item.img} />
+    </View>
+  );
+
+  const renderButtons = ({ item }) => (
+    <View>
+      <FilterButton title={item.title} />
+    </View>
   );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headings}> Browse Collection </Text>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.collectionsContainer}>
+          <Text style={styles.headerText}> Featured Collections </Text>
+        </View>
+
+        <View style={styles.featuredCollections}>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+        <View style={styles.sortContainer}>
+          <Text style={styles.headSort}> Sort By </Text>
+
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={Sort}
+            renderItem={renderButtons}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+        <View style={styles.mangaContainer}>
+          <Text style={styles.headerText}> Manga </Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+
+        <View>
+          <Text style={styles.headerText}> Action Figures </Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      </ScrollView>
     </View>
   );
 };
