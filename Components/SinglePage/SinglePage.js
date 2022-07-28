@@ -6,10 +6,13 @@ import { useRef, useMemo, useCallback } from "react";
 
 export default function SinglePage() {
   const bottomSheetRef = useRef(BottomSheet);
+
   const snapPoints = useMemo(() => ["1%", "75%"], []);
+
   const handleSheetChanges = useCallback((index) => {
     console.log("HandleSheetChanges", index);
   });
+
   const open = () => {
     bottomSheetRef.current.snapToIndex(1);
   };
@@ -17,15 +20,18 @@ export default function SinglePage() {
   const close = () => {
     bottomSheetRef.current.snapToIndex(0);
   };
+
   const bottomSheet = () => (
     <BottomSheet
       ref={bottomSheetRef}
-      index={-1}
+      index={1}
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
+      handleStyle={{display: 'none'}}
+      backgroundStyle={{backgroundColor:'red', top: 20}}
       enablePanDownToClose
     >
-      <View style={styles.bottomSheetContainer}>
+      <View style={[styles.bottomSheetContainer, {paddingTop: 35}]}>
         <Text>Content should go here!</Text>
         <Pressable onPress={() => close()}>
           <Text>Close the Bottom Drawer</Text>

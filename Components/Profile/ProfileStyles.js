@@ -74,6 +74,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
   },
+  // imgSize: {
+  //   height: 50,
+  //   width: 50
+  // }
 });
 
 export { styles };
