@@ -26,12 +26,15 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: "white",
     fontWeight: "bold",
-    marginBottom: 15
+    marginBottom: 15,
   },
   sortContainer: {
     paddingBottom: 15,
   },
   mangaContainer: {
+    paddingBottom: 15,
+  },
+  actionFiguresContainer: {
     paddingBottom: 15,
   },
   headSort: {

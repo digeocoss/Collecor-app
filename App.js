@@ -16,11 +16,25 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      initialRouteName="Feed"
+      screenOptions={{
+        tabBarActiveTintColor: "#81C8E7",
+        title: "",
+        tabBarStyle: {
+          backgroundColor: "#084F6D",
+          borderTopColor: "transparent",
+          paddingTop: 10,
+          paddingBottom: 10
+        },
+      }}
+    >
       <Tab.Screen
         name="Camera"
         options={{
-          tabBarIcon: () => <Entypo name="camera" size={24} color="black" />,
+          tabBarIcon: ({ color }) => (
+            <Entypo name="camera" size={35} color={color} />
+          ),
           header: () => null,
         }}
         component={CameraUse}
@@ -28,8 +42,8 @@ function MyTabs() {
       <Tab.Screen
         name="Feed"
         options={{
-          tabBarIcon: () => (
-            <Fontisto name="spinner-refresh" size={24} color="black" />
+          tabBarIcon: ({ color }) => (
+            <Fontisto name="spinner-refresh" size={35} color={color} />
           ),
           header: () => null,
         }}
@@ -38,8 +52,8 @@ function MyTabs() {
       <Tab.Screen
         name="Profile"
         options={{
-          tabBarIcon: () => (
-            <FontAwesome5 name="home" size={24} color="black" />
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5 name="home" size={35} color={color} />
           ),
           header: () => null,
         }}
@@ -47,17 +61,17 @@ function MyTabs() {
       />
       {/* <Tab.Screen name="Trade" component={Trades} />
       <Tab.Screen name="Buy" component={Buy} /> */}
-      <Tab.Screen name="SinglePage" component={SinglePage} />
+      {/* <Tab.Screen name="SinglePage" component={SinglePage} /> */}
     </Tab.Navigator>
   );
 }
 
 export default function App() {
   return (
-    <GestureHandlerRootView style={{flex: 1,}}>
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
     </GestureHandlerRootView>
   );
 }
