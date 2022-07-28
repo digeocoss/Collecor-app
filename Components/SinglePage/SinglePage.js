@@ -44,19 +44,31 @@ export default function SinglePage() {
       <Text style={styles.ooo}>ooo</Text>
       <View>
         <View style={styles.profileContainer}>
+          <View style={styles.pfpImageContainer} >
           <Image
             style={styles.profilePicture}
             source={ExampleProfile.pfp.img}
           />
+          </View>
+          <View style={styles.userRating} >
           <Text style={styles.proText}>@user123</Text>
           <Text style={styles.rat}>4.7 Rating</Text>
+          </View>
         </View>
-        <Text>ChainSaw Man Vol.1 manga book</Text>
-        <Text>Freshn from barns and noble</Text>
+        <Text style={styles.itemTitle} >ChainSaw Man Vol.1 manga book</Text>
+        <Text style={styles.itemDis} >Fresh from barns and noble</Text>
       </View>
-      <Pressable onPress={() => open()}>
-        <Text>Press Me</Text>
+      <View style={styles.space} >
+      <Pressable style={styles.tradeBut} onPress={() => open()}>
+        <Text>Trade</Text>
       </Pressable>
+      <Pressable onPress={() => open()}>
+        <Text>Buy</Text>
+      </Pressable>
+      <Pressable onPress={() => open()}>
+        <Text>Trade & Buy</Text>
+      </Pressable>
+      </View>
       {bottomSheet()}
     </View>
   );

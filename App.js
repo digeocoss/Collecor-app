@@ -61,7 +61,10 @@ function MyTabs() {
       />
       {/* <Tab.Screen name="Trade" component={Trades} />
       <Tab.Screen name="Buy" component={Buy} /> */}
-      <Tab.Screen name="SinglePage" component={SinglePage} />
+      <Tab.Screen
+       name="SinglePage"
+        component={SinglePage}
+      />
     </Tab.Navigator>
   );
 }

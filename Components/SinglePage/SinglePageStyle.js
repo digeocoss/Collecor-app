@@ -11,19 +11,20 @@ const styles = StyleSheet.create({
     marginTop: "10%",
   },
   tradeThing: {
-    width: 200,
-    height: 200,
+    width: 180,
+    height: 180,
     borderRadius: 20,
     overflow: "hidden",
     marginTop: 20,
     marginBottom: 10,
   },
   ooo: {
-    marginLeft: 85,
+    marginLeft: 76,
     color: "white"
   },
   profileContainer: {
     // marginTop: "10%",
+    
   },
   profilePicture: {
     width: 70,
@@ -35,6 +36,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
   },
+  pfpImageContainer:{
+
+  },
+  userRating:{
+
+  },
   proText: {
     color: "white",
     fontSize: 17,
@@ -42,6 +49,21 @@ const styles = StyleSheet.create({
   },
   rat:{
     color: "white"
+  },
+  itemTitle: {
+    color: "white",
+    fontSize: "20"
+  },
+  itemDis: {
+    color: "white",
+    fontSize: 15
+  },
+  space:{
+    marginTop: 40
+  },
+  tradeBut: {
+    backgroundColor: "white",
+    borderRadius: 200,
   }
 });
 
