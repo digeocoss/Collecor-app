@@ -3,7 +3,7 @@ import { styles } from "./SinglePageStyle.js";
 import { ExampleProfile } from "../../Data/Profile_Data";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { useRef, useMemo, useCallback } from "react";
-import { AntDesign } from '@expo/vector-icons'; 
+import { AntDesign } from "@expo/vector-icons";
 import { CollectibleData } from "../../Data/FakeCollections.js";
 
 export default function SinglePage() {
@@ -32,7 +32,9 @@ export default function SinglePage() {
           overflow: "hidden",
           maxWidth: 175,
           maxHeight: 175,
-          marginBottom: 20,
+          margin: 10,
+          borderStyle: "solid",
+          borderColor: "red",
         }}
       >
         <Image source={item.img} />
@@ -46,65 +48,74 @@ export default function SinglePage() {
       index={0}
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
-      handleStyle={{display: 'none'}}
-      backgroundStyle={{backgroundColor:'white', top: 20}}
+      handleStyle={{ display: "none" }}
+      backgroundStyle={{ backgroundColor: "white", top: 20 }}
       enablePanDownToClose
     >
-      <View style={[styles.tradeContainer, {paddingTop: 35}]}>
-        <Text style={styles.yourCollection}>Your Collection</Text>
-        <View style={styles.collectionItems}>
-            <Flatlist data={CollectibleData} keyExtractor={(item) => item.id} renderItem={render}
-        numColumns={2}/>
-        </View>  
-        <Pressable style={{backgroundColor: "red"}} onPress={() => close()}>
+      <View style={[styles.tradeContainer]}>
+        <Pressable style={{ backgroundColor: "red" }} onPress={() => close()}>
           <Text>return</Text>
         </Pressable>
+        <Text style={styles.yourCollection}>Your Collection</Text>
+        <View style={styles.collectionItems}>
+          <FlatList
+            data={ExampleProfile.collections}
+            keyExtractor={(item) => item.id}
+            renderItem={render}
+            numColumns={2}
+          />
+        </View>
       </View>
     </BottomSheet>
   );
   return (
     <View style={styles.container}>
-      <View style={styles.arowAli} >
-      <View style={styles.TradeThingContainer}>
-        <Image
-          style={styles.tradeThing}
-          source={ExampleProfile.tradeItem.img}
-        />
-      </View>
-      <View style={styles.arowwsty} >
-      <AntDesign style={{marginBottom: 40,}} name="leftcircle" size={40} color="white" />
-      <AntDesign name="rightcircle" size={40} color="white" />
-      </View>
+      <View style={styles.arowAli}>
+        <View style={styles.TradeThingContainer}>
+          <Image
+            style={styles.tradeThing}
+            source={ExampleProfile.tradeItem.img}
+          />
+        </View>
+        <View style={styles.arowwsty}>
+          <AntDesign
+            style={{ marginBottom: 40 }}
+            name="leftcircle"
+            size={40}
+            color="white"
+          />
+          <AntDesign name="rightcircle" size={40} color="white" />
+        </View>
       </View>
       <Text style={styles.ooo}>ooo</Text>
       <View>
         <View style={styles.profileContainer}>
-          <View style={styles.pfpImageContainer} >
-          <Image
-            style={styles.profilePicture}
-            source={ExampleProfile.pfp.img}
-          />
+          <View style={styles.pfpImageContainer}>
+            <Image
+              style={styles.profilePicture}
+              source={ExampleProfile.pfp.img}
+            />
           </View>
-          <View style={styles.userRating} >
-          <Text style={styles.proText}>@user123</Text>
-          <Text style={styles.rat}>4.7 Rating</Text>
+          <View style={styles.userRating}>
+            <Text style={styles.proText}>@user123</Text>
+            <Text style={styles.rat}>4.7 Rating</Text>
           </View>
         </View>
-        <Text style={styles.itemTitle} >ChainSaw Man Vol.1 manga book</Text>
-        <Text style={styles.itemDis} >Fresh from barns and noble</Text>
+        <Text style={styles.itemTitle}>ChainSaw Man Vol.1 manga book</Text>
+        <Text style={styles.itemDis}>Fresh from barns and noble</Text>
       </View>
-      <View style={styles.space} >
-      <Pressable style={styles.tradeBut} onPress={() => open()}>
-        <Text style={{fontSize: 30}} >    Trade    </Text>
-      </Pressable>
-      <Pressable style={styles.tradeBut} onPress={() => open()}>
-        <Text style={{fontSize: 30}}>      Buy      </Text>
-      </Pressable>
+      <View style={styles.space}>
+        <Pressable style={styles.tradeBut} onPress={() => open()}>
+          <Text style={{ fontSize: 30 }}> Trade </Text>
+        </Pressable>
+        <Pressable style={styles.tradeBut} onPress={() => open()}>
+          <Text style={{ fontSize: 30 }}> Buy </Text>
+        </Pressable>
       </View>
-      <Pressable style={styles.buyTradeBut}onPress={() => open()}>
-        <Text style={{fontSize: 30}}>Trade & Buy</Text>
+      <Pressable style={styles.buyTradeBut} onPress={() => open()}>
+        <Text style={{ fontSize: 30 }}>Trade & Buy</Text>
       </Pressable>
-      
+
       {bottomSheet()}
     </View>
   );

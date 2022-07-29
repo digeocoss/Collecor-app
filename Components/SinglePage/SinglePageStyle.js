@@ -2,8 +2,9 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   tradeContainer: {
-    backgroundColor: "white",
-    marginLeft: 20,
+    overflow: "hidden",
+    alignItems: "center",
+    paddingTop: "10%",
   },
   yourCollection: {
     fontSize: 20,
@@ -14,7 +15,6 @@ const styles = StyleSheet.create({
     paddingLeft: "7%",
   },
   TradeThingContainer: {
-
     marginTop: "10%",
   },
   tradeThing: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   ooo: {
     marginLeft: 76,
-    color: "white"
+    color: "white",
   },
   profileContainer: {
     flexDirection: "row",
@@ -42,27 +42,25 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
   },
-  pfpImageContainer:{
-
-  },
+  pfpImageContainer: {},
   arowAli: {
-    flexDirection: "row"
+    flexDirection: "row",
   },
   arowwsty: {
     marginTop: 80,
     marginLeft: 80,
   },
-  userRating:{
+  userRating: {
     marginTop: 27,
     marginLeft: 7,
   },
   proText: {
     color: "white",
     fontSize: 17,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
-  rat:{
-    color: "white"
+  rat: {
+    color: "white",
   },
   itemTitle: {
     color: "white",
@@ -70,9 +68,9 @@ const styles = StyleSheet.create({
   },
   itemDis: {
     color: "white",
-    fontSize: 15
+    fontSize: 15,
   },
-  space:{
+  space: {
     marginTop: 40,
     flexDirection: "row",
   },
@@ -91,8 +89,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 200,
     marginRight: 100,
-    marginLeft:  100,
-    marginTop: 50
+    marginLeft: 100,
+    marginTop: 50,
   },
 });
 
