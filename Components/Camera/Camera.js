@@ -62,7 +62,7 @@ export default function CameraUse () {
     return (
         <Camera style={styles.container} ref={cameraRef }>
           <View style={ styles.buttonContainer }>
-            <Button title="Take picture" onPress={TakePicture}/>
+            <Button style={styles.picButt} title="Take picture" onPress={TakePicture}/>
             </View>
         
         </Camera>

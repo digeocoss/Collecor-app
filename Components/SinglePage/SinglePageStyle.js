@@ -3,11 +3,20 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   tradeContainer: {
     overflow: "hidden",
-    alignItems: "center",
+    // alignItems: "center",
     paddingTop: "10%",
+    marginLeft: 20,
+    marginRight: 20,
   },
   yourCollection: {
-    fontSize: 20,
+    fontSize: 25,
+    fontWeight: "bold",
+    marginBottom:  50 ,
+  },
+  back: {
+    position: "absolute",
+    marginTop: 470 ,
+    alignItems: "center",
   },
   container: {
     flex: 1,

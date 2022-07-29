@@ -28,11 +28,10 @@ export default function SinglePage() {
       <View
         style={{
           backgroundColor: "blue",
-          borderRadius: 10,
+          borderRadius: 20,
           overflow: "hidden",
-          maxWidth: 175,
-          maxHeight: 175,
-          margin: 10,
+          width: 170,
+          height: 170,
           borderStyle: "solid",
           borderColor: "red",
         }}
@@ -53,7 +52,7 @@ export default function SinglePage() {
       enablePanDownToClose
     >
       <View style={[styles.tradeContainer]}>
-        <Pressable style={{ backgroundColor: "red" }} onPress={() => close()}>
+        <Pressable style={styles.back} onPress={() => close()}>
           <Text>return</Text>
         </Pressable>
         <Text style={styles.yourCollection}>Your Collection</Text>
@@ -106,14 +105,14 @@ export default function SinglePage() {
       </View>
       <View style={styles.space}>
         <Pressable style={styles.tradeBut} onPress={() => open()}>
-          <Text style={{ fontSize: 30 }}> Trade </Text>
+          <Text style={{ fontSize: 30 }}>     Trade    </Text>
         </Pressable>
         <Pressable style={styles.tradeBut} onPress={() => open()}>
-          <Text style={{ fontSize: 30 }}> Buy </Text>
+          <Text style={{ fontSize: 30 }}>      Buy      </Text>
         </Pressable>
       </View>
       <Pressable style={styles.buyTradeBut} onPress={() => open()}>
-        <Text style={{ fontSize: 30 }}>Trade & Buy</Text>
+        <Text style={{ fontSize: 30, marginLeft: 5, marginRight:2, }}>Trade & Buy</Text>
       </Pressable>
 
       {bottomSheet()}
