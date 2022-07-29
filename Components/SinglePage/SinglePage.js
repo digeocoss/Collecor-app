@@ -1,8 +1,10 @@
-import { View, Text, Pressable, Image } from "react-native";
+import { View, Text, Pressable, Image, FlatList } from "react-native";
 import { styles } from "./SinglePageStyle.js";
 import { ExampleProfile } from "../../Data/Profile_Data";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { useRef, useMemo, useCallback } from "react";
+import { AntDesign } from '@expo/vector-icons'; 
+import { CollectibleData } from "../../Data/FakeCollections.js";
 
 export default function SinglePage() {
   const bottomSheetRef = useRef(BottomSheet);
@@ -21,6 +23,23 @@ export default function SinglePage() {
     bottomSheetRef.current.snapToIndex(0);
   };
 
+  const render = ({ item }) => {
+    return (
+      <View
+        style={{
+          backgroundColor: "blue",
+          borderRadius: 10,
+          overflow: "hidden",
+          maxWidth: 175,
+          maxHeight: 175,
+          marginBottom: 20,
+        }}
+      >
+        <Image source={item.img} />
+      </View>
+    );
+  };
+
   const bottomSheet = () => (
     <BottomSheet
       ref={bottomSheetRef}
@@ -28,24 +47,34 @@ export default function SinglePage() {
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
       handleStyle={{display: 'none'}}
-      backgroundStyle={{backgroundColor:'red', top: 20}}
+      backgroundStyle={{backgroundColor:'white', top: 20}}
       enablePanDownToClose
     >
-      <View style={[styles.bottomSheetContainer, {paddingTop: 35}]}>
-        <Text>Content should go here!</Text>
-        <Pressable onPress={() => close()}>
-          <Text>Close the Bottom Drawer</Text>
+      <View style={[styles.tradeContainer, {paddingTop: 35}]}>
+        <Text style={styles.yourCollection}>Your Collection</Text>
+        <View style={styles.collectionItems}>
+            <Flatlist data={CollectibleData} keyExtractor={(item) => item.id} renderItem={render}
+        numColumns={2}/>
+        </View>  
+        <Pressable style={{backgroundColor: "red"}} onPress={() => close()}>
+          <Text>return</Text>
         </Pressable>
       </View>
     </BottomSheet>
   );
   return (
     <View style={styles.container}>
+      <View style={styles.arowAli} >
       <View style={styles.TradeThingContainer}>
         <Image
           style={styles.tradeThing}
           source={ExampleProfile.tradeItem.img}
         />
+      </View>
+      <View style={styles.arowwsty} >
+      <AntDesign style={{marginBottom: 40,}} name="leftcircle" size={40} color="white" />
+      <AntDesign name="rightcircle" size={40} color="white" />
+      </View>
       </View>
       <Text style={styles.ooo}>ooo</Text>
       <View>

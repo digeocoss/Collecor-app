@@ -1,6 +1,13 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  tradeContainer: {
+    backgroundColor: "white",
+    marginLeft: 20,
+  },
+  yourCollection: {
+    fontSize: 20,
+  },
   container: {
     flex: 1,
     backgroundColor: "#084F6D",
@@ -37,6 +44,13 @@ const styles = StyleSheet.create({
   },
   pfpImageContainer:{
 
+  },
+  arowAli: {
+    flexDirection: "row"
+  },
+  arowwsty: {
+    marginTop: 80,
+    marginLeft: 80,
   },
   userRating:{
     marginTop: 27,
