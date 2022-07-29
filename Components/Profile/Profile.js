@@ -12,15 +12,7 @@ import { ExampleProfile } from "../../Data/Profile_Data";
 import { styles } from "./ProfileStyles.js";
 
 export default function Profile() {
-  const GridView = (item) => (
-    <View key={item.id}>
-      <View style={styles.row}>
-        <Image style={styles.imgSize} source={item.img} />
-      </View>
-    </View>
-  );
 
-  console.log(ExampleProfile.collections);
 
   const render = ({ item }) => {
     return (
@@ -44,7 +36,7 @@ export default function Profile() {
       <FlatList
         columnWrapperStyle={{ justifyContent: "space-evenly" }}
         ListHeaderComponent={() => (
-          <View style={{marginBottom: 15}}>
+          <View style={{ marginTop: 15,marginBottom: 15,}}>
             <View style={styles.iconHeader}>
               <Pressable
                 onPress={() => {

@@ -24,7 +24,7 @@ export default function SinglePage() {
   const bottomSheet = () => (
     <BottomSheet
       ref={bottomSheetRef}
-      index={1}
+      index={0}
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
       handleStyle={{display: 'none'}}
@@ -66,15 +66,16 @@ export default function SinglePage() {
       </View>
       <View style={styles.space} >
       <Pressable style={styles.tradeBut} onPress={() => open()}>
-        <Text>Trade</Text>
+        <Text style={{fontSize: 30}} >    Trade    </Text>
       </Pressable>
-      <Pressable onPress={() => open()}>
-        <Text>Buy</Text>
-      </Pressable>
-      <Pressable onPress={() => open()}>
-        <Text>Trade & Buy</Text>
+      <Pressable style={styles.tradeBut} onPress={() => open()}>
+        <Text style={{fontSize: 30}}>      Buy      </Text>
       </Pressable>
       </View>
+      <Pressable style={styles.buyTradeBut}onPress={() => open()}>
+        <Text style={{fontSize: 30}}>Trade & Buy</Text>
+      </Pressable>
+      
       {bottomSheet()}
     </View>
   );
