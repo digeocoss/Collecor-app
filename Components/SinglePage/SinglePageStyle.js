@@ -1,22 +1,33 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  tradeHeader: {
+    margin: 30
+  },
   tradeContainer: {
     overflow: "hidden",
-    // alignItems: "center",
-    paddingTop: "10%",
-    marginLeft: 20,
-    marginRight: 20,
+    alignItems: "center",
+    paddingTop: 10,
+    paddingBottom: 140
   },
   yourCollection: {
     fontSize: 25,
     fontWeight: "bold",
-    marginBottom:  50 ,
+    marginTop: 30,
   },
-  back: {
-    position: "absolute",
-    marginTop: 470 ,
+  collectionItems: {
+    // backgroundColor: "blue"
+  },
+  offerButton: {
+    backgroundColor: "#084F6D",
     alignItems: "center",
+    borderRadius: 180,
+    marginLeft: 100,
+    marginRight: 100,
+  },
+  offerButtonText: {
+    color: "white",
+    fontSize: 20,
   },
   container: {
     flex: 1,

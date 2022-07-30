@@ -34,6 +34,7 @@ export default function SinglePage() {
           height: 170,
           borderStyle: "solid",
           borderColor: "red",
+          margin: 10
         }}
       >
         <Image source={item.img} />
@@ -48,21 +49,24 @@ export default function SinglePage() {
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
       handleStyle={{ display: "none" }}
-      backgroundStyle={{ backgroundColor: "white", top: 20 }}
+      backgroundStyle={{ backgroundColor: "white", top: 20}}
       enablePanDownToClose
     >
-      <View style={[styles.tradeContainer]}>
-        <Pressable style={styles.back} onPress={() => close()}>
-          <Text>return</Text>
-        </Pressable>
+      <View style={styles.tradeHeader}>
         <Text style={styles.yourCollection}>Your Collection</Text>
+      </View>
+      <View style={[styles.tradeContainer]}>
         <View style={styles.collectionItems}>
           <FlatList
+            columnWrapperStyle={{ justifyContent: "space-evenly" }}
             data={ExampleProfile.collections}
             keyExtractor={(item) => item.id}
             renderItem={render}
             numColumns={2}
           />
+          <Pressable style={styles.offerButton} onPress={() => close()}>
+            <Text style={styles.offerButtonText}>Offer </Text>
+        </Pressable>
         </View>
       </View>
     </BottomSheet>

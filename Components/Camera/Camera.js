@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
   buttonContainer:{
     BackgroundColor: '#fff',
     alingSelf: 'flex-end',
+    color: "red",
 },
 preview: {
     alignSelf: 'stretch',
