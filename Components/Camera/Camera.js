@@ -3,6 +3,10 @@ import * as MediaLibary from "expo-media-library";
 import { StyleSheet, Text, View, Button, SafeAreaView, ImageBackgroundComponent, Image  } from 'react-native';
 import { useState, useRef, useEffect } from "react";
 import { shareAsync } from "expo-sharing";
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+import { TouchableOpacity } from 'react-native'
+import { Entypo } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons'; 
 
 export default function CameraUse () {
     let cameraRef = useRef();
@@ -61,9 +65,17 @@ export default function CameraUse () {
     
     return (
         <Camera style={styles.container} ref={cameraRef }>
-          <View style={ styles.buttonContainer }>
-            <Button style={styles.picButt} title="Take picture" onPress={TakePicture}/>
-            </View>
+            <TouchableOpacity style={styles.circleBut} activeOpacity={0.5} onPress={TakePicture}>
+            <Ionicons name="flash-outline" size={24} color="white" />
+    <View style={styles.SeparatorLine} />
+</TouchableOpacity>
+        <View style={ styles.buttonContainer }>
+          {/* <Button color="green" title="Take picture" onPress={TakePicture}/> */}
+<TouchableOpacity style={styles.circleBut} activeOpacity={0.5} onPress={TakePicture}>
+    <Entypo name="circle" size={100} color="white" />
+    <View style={styles.SeparatorLine} />
+</TouchableOpacity>
+        </View>
         
         </Camera>
       );
@@ -85,7 +97,15 @@ const styles = StyleSheet.create({
 preview: {
     alignSelf: 'stretch',
     flex: 1
-}
+},
+TextStyle: {
+    color : "white"
+},
+circleBut: {
+    marginTop:650,
+},
+flash
+
 })
 
 
