@@ -65,18 +65,26 @@ export default function CameraUse () {
     
     return (
         <Camera style={styles.container} ref={cameraRef }>
-            <TouchableOpacity style={styles.circleBut} activeOpacity={0.5} onPress={TakePicture}>
-            <Ionicons name="flash-outline" size={24} color="white" />
+            <View style={styles.topSet} >
+            <TouchableOpacity style={styles.flash} activeOpacity={0.5} onPress={TakePicture}>
+            <Ionicons name="flash-outline" size={50} color="white" />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.antiFlash} activeOpacity={0.5} onPress={TakePicture}>
+            <Ionicons name="flash-off-outline" size={50} color="white" />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.swichCam} activeOpacity={0.5} onPress={TakePicture}>
+            <Ionicons name="md-camera-reverse-outline" size={75} color="white" />
+            </TouchableOpacity>
+            </View>
     <View style={styles.SeparatorLine} />
-</TouchableOpacity>
+
         <View style={ styles.buttonContainer }>
           {/* <Button color="green" title="Take picture" onPress={TakePicture}/> */}
-<TouchableOpacity style={styles.circleBut} activeOpacity={0.5} onPress={TakePicture}>
-    <Entypo name="circle" size={100} color="white" />
-    <View style={styles.SeparatorLine} />
-</TouchableOpacity>
+          <TouchableOpacity style={styles.circleBut} activeOpacity={0.5} onPress={TakePicture}>
+        <Entypo name="circle" size={100} color="white" />
+        <View style={styles.SeparatorLine} />
+        </TouchableOpacity> 
         </View>
-        
         </Camera>
       );
 }
@@ -102,9 +110,29 @@ TextStyle: {
     color : "white"
 },
 circleBut: {
-    marginTop:650,
+    // position: "absolute",
+    marginTop: 0,
+    marginBottom: 0,
+    alignSelf: "center",
 },
-flash
+topSet: {
+    padding: "4%",
+    backgroundColor: "#084F6D",
+    width: 400,
+    height: 120,
+    //  marginBottom: 750,
+    //  marginTop: 150,
+    flexDirection: "row"
+},
+flash: {
+    marginRight: 10,
+},
+antiFlash: {
+    // marginRight: 30
+},
+swichCam: {
+    marginRight: 35
+},
 
 })
 
