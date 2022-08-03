@@ -120,7 +120,7 @@ topSet: {
     backgroundColor: "#084F6D",
     width: 400,
     height: 120,
-    //  marginBottom: 750,
+     marginBottom: 525,
     //  marginTop: 150,
     flexDirection: "row"
 },
@@ -131,7 +131,7 @@ antiFlash: {
     // marginRight: 30
 },
 swichCam: {
-    marginRight: 35
+    marginLeft: 35
 },
 
 })
