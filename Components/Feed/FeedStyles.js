@@ -2,11 +2,27 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "black",
-    padding: "5%",
+    flex: 1,
+    backgroundColor: "#084F6D",
+    paddingTop: "20%",
+    paddingLeft: "3%",
   },
-  headings: {
-    padding: "5%",
+  imageitem: {
+    borderRadius: 20,
+    marginLeft: 7,
+    width: 200,
+    height: 200,
+  },
+  sortCatigories: {
+    borderRadius: 200,
+  },
+  collectionsContainer: {
+    marginBottom: 15,
+  },
+  featuredCollections: {
+    marginBottom: 15,
+  },
+  headerText: {
     fontSize: 25,
     color: "Black",
     backgroundColor: "#81C8E7",
@@ -35,8 +51,9 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
   },
-  title: {
-    fontSize: 32,
+  sortCatText: {
+    fontSize: 20,
+    padding: 5,
   },
 });
 

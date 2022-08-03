@@ -3,6 +3,10 @@ import * as MediaLibary from "expo-media-library";
 import { StyleSheet, Text, View, Button, SafeAreaView, ImageBackgroundComponent, Image  } from 'react-native';
 import { useState, useRef, useEffect } from "react";
 import { shareAsync } from "expo-sharing";
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+import { TouchableOpacity } from 'react-native'
+import { Entypo } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons'; 
 
 export default function CameraUse () {
     let cameraRef = useRef();
@@ -61,10 +65,26 @@ export default function CameraUse () {
     
     return (
         <Camera style={styles.container} ref={cameraRef }>
-          <View style={ styles.buttonContainer }>
-            <Button title="Take picture" onPress={TakePicture}/>
+            <View style={styles.topSet} >
+            <TouchableOpacity style={styles.flash} activeOpacity={0.5} onPress={TakePicture}>
+            <Ionicons name="flash-outline" size={50} color="white" />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.antiFlash} activeOpacity={0.5} onPress={TakePicture}>
+            <Ionicons name="flash-off-outline" size={50} color="white" />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.swichCam} activeOpacity={0.5} onPress={TakePicture}>
+            <Ionicons name="md-camera-reverse-outline" size={75} color="white" />
+            </TouchableOpacity>
             </View>
-        
+    <View style={styles.SeparatorLine} />
+
+        <View style={ styles.buttonContainer }>
+          {/* <Button color="green" title="Take picture" onPress={TakePicture}/> */}
+          <TouchableOpacity style={styles.circleBut} activeOpacity={0.5} onPress={TakePicture}>
+        <Entypo name="circle" size={100} color="white" />
+        <View style={styles.SeparatorLine} />
+        </TouchableOpacity> 
+        </View>
         </Camera>
       );
 }
@@ -80,11 +100,40 @@ const styles = StyleSheet.create({
   buttonContainer:{
     BackgroundColor: '#fff',
     alingSelf: 'flex-end',
+    color: "red",
 },
 preview: {
     alignSelf: 'stretch',
     flex: 1
-}
+},
+TextStyle: {
+    color : "white"
+},
+circleBut: {
+    // position: "absolute",
+    marginTop: 0,
+    marginBottom: 0,
+    alignSelf: "center",
+},
+topSet: {
+    padding: "4%",
+    backgroundColor: "#084F6D",
+    width: 400,
+    height: 120,
+     marginBottom: 525,
+    //  marginTop: 150,
+    flexDirection: "row"
+},
+flash: {
+    marginRight: 10,
+},
+antiFlash: {
+    // marginRight: 30
+},
+swichCam: {
+    marginLeft: 35
+},
+
 })
 
 
